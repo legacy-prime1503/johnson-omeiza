@@ -5,10 +5,10 @@ import { motion } from "motion/react";
 
 export default function MyProcess() {
   return (
-    <section id="process" className="py-24 bg-white text-stone-800 relative border-b border-[#C5A880]/30 overflow-hidden">
+    <section id="process" className="py-24 bg-[#0A0D14] text-stone-300 relative border-b border-[#F3C06B]/20 overflow-hidden">
       {/* Dynamic atmospheric ambient lighting */}
-      <div className="absolute top-1/2 left-0 right-0 h-[450px] bg-[#C5A880]/4 rounded-full blur-[140px] pointer-events-none -translate-y-1/2" />
-      <div className="absolute top-10 left-10 w-44 h-44 bg-[#B89047]/3 rounded-full blur-[80px] pointer-events-none" />
+      <div className="absolute top-1/2 left-0 right-0 h-[450px] bg-[#F3C06B]/4 rounded-full blur-[140px] pointer-events-none -translate-y-1/2" />
+      <div className="absolute top-10 left-10 w-44 h-44 bg-[#F3C06B]/3 rounded-full blur-[80px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -20,13 +20,13 @@ export default function MyProcess() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto space-y-4 mb-20"
         >
-          <span className="inline-block text-xs font-mono uppercase tracking-widest text-[#B89047] font-extrabold bg-[#B89047]/10 px-3.5 py-1.5 rounded-full border border-[#B89047]/20">
+          <span className="inline-block text-xs font-mono uppercase tracking-widest text-[#F3C06B] font-extrabold bg-[#F3C06B]/10 px-3.5 py-1.5 rounded-full border border-[#F3C06B]/20">
             Execution Roadmap
           </span>
-          <h2 className="text-3xl sm:text-5xl font-serif font-extrabold tracking-tight text-stone-900 leading-tight">
-            My <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1A1D24] via-[#B89047] to-[#C49B55]">Collaborative Process</span>
+          <h2 className="text-3xl sm:text-5xl font-serif font-black tracking-tight text-white leading-tight">
+            My <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFE5A3] via-[#F3C06B] to-[#B89047]">Collaborative Process</span>
           </h2>
-          <p className="text-stone-600 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+          <p className="text-stone-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed font-sans">
             Eight highly structured phases designed to transition your experience into an interview-magnet profile.
           </p>
         </motion.div>
@@ -41,7 +41,7 @@ export default function MyProcess() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1.2, ease: "easeOut" }}
             style={{ originY: 0 }}
-            className="absolute left-0 top-3 bottom-0 w-[2px] bg-gradient-to-b from-[#B89047] via-stone-200 to-stone-300"
+            className="absolute left-0 top-3 bottom-0 w-[2px] bg-gradient-to-b from-[#F3C06B] via-[#B89047]/30 to-transparent"
           />
 
           {PROCESS_STEPS.map((step, idx) => {
@@ -58,7 +58,7 @@ export default function MyProcess() {
                 {/* Number bullet with hover animation */}
                 <motion.div 
                   whileHover={{ scale: 1.15, rotate: 5 }}
-                  className="absolute -left-[18px] top-0.5 w-9 h-9 rounded-full bg-white border-2 border-[#B89047]/60 flex items-center justify-center text-xs font-mono font-bold text-[#B89047] group-hover:border-[#C5A880] group-hover:bg-[#C5A880] group-hover:text-white transition-all duration-300 shadow-sm z-10 cursor-default"
+                  className="absolute -left-[18px] top-0.5 w-9 h-9 rounded-full bg-[#07090E] border-2 border-[#F3C06B] flex items-center justify-center text-xs font-mono font-bold text-[#F3C06B] group-hover:border-[#FFE5A3] group-hover:bg-[#F3C06B] group-hover:text-[#07090E] transition-all duration-300 shadow-lg shadow-[#F3C06B]/10 z-10 cursor-default"
                 >
                   {step.step}
                 </motion.div>
@@ -67,20 +67,20 @@ export default function MyProcess() {
                 <motion.div 
                   whileHover={{ 
                     x: 6,
-                    borderColor: "rgba(184, 144, 71, 0.5)",
-                    backgroundColor: "rgba(255, 255, 255, 1)"
+                    borderColor: "rgba(243, 192, 107, 0.5)",
+                    backgroundColor: "rgba(22, 29, 46, 0.95)"
                   }}
-                  className="bg-[#FAF8F5] border border-[#C5A880]/20 p-6 rounded-xl transition-all duration-300 shadow-sm hover:shadow-lg"
+                  className="bg-[#111625]/90 border border-[#F3C06B]/15 p-6 rounded-xl transition-all duration-300 shadow-sm hover:shadow-lg"
                 >
                   <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-2 mb-3">
-                    <h3 className="text-base font-bold text-stone-900 group-hover:text-[#B89047] transition-colors font-sans">
+                    <h3 className="text-base font-bold text-white group-hover:text-[#F3C06B] transition-colors font-sans">
                       {step.title}
                     </h3>
-                    <span className="inline-block text-[10px] font-mono text-[#B89047] bg-[#B89047]/5 px-2 py-0.5 rounded border border-[#B89047]/20 uppercase tracking-widest font-bold">
+                    <span className="inline-block text-[10px] font-mono text-[#F3C06B] bg-[#F3C06B]/10 px-2 py-0.5 rounded border border-[#F3C06B]/20 uppercase tracking-widest font-bold">
                       Stage 0{step.step}
                     </span>
                   </div>
-                  <p className="text-xs text-stone-600 leading-relaxed font-sans">
+                  <p className="text-xs text-stone-300 leading-relaxed font-sans">
                     {step.description}
                   </p>
                 </motion.div>

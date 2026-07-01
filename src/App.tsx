@@ -23,7 +23,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FAF8F5] text-stone-800 antialiased selection:bg-[#C5A880]/30 selection:text-[#B89047]">
+    <div className="min-h-screen bg-[#07090E] text-stone-100 antialiased selection:bg-[#F3C06B]/30 selection:text-[#F3C06B]">
       {/* Premium Header */}
       <Header onNavigate={handleNavigate} />
 

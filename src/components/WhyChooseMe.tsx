@@ -62,24 +62,24 @@ export default function WhyChooseMe() {
 
   const renderIcon = (iconName: string) => {
     const IconComponent = (LucideIcons as any)[iconName] || LucideIcons.Check;
-    return <IconComponent className="w-5 h-5 text-[#B89047]" />;
+    return <IconComponent className="w-5 h-5 text-[#F3C06B]" />;
   };
 
   return (
-    <section id="why-choose-me" className="py-24 bg-[#FAF8F5] text-stone-800 relative border-b border-[#C5A880]/30">
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(197,168,128,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(197,168,128,0.02)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
+    <section id="why-choose-me" className="py-24 bg-[#0A0D14] text-stone-300 relative border-b border-[#F3C06B]/20">
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(243,192,107,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(243,192,107,0.03)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-          <span className="text-xs font-mono uppercase tracking-widest text-[#B89047] font-extrabold">
+          <span className="text-xs font-mono uppercase tracking-widest text-[#F3C06B] font-extrabold">
             The Competitive Edge
           </span>
-          <h2 className="text-3xl sm:text-4xl font-serif font-extrabold tracking-tight text-stone-900">
+          <h2 className="text-3xl sm:text-4xl font-serif font-black tracking-tight text-white">
             Why Executive Leaders Trust My Advisory
           </h2>
-          <p className="text-stone-600 text-sm sm:text-base">
+          <p className="text-stone-300 text-sm sm:text-base font-sans">
             We don't write generic, bulleted chronologies. We engineer high-yield career marketing campaigns.
           </p>
         </div>
@@ -89,17 +89,17 @@ export default function WhyChooseMe() {
           {values.map((v, i) => (
             <div
               key={i}
-              className="bg-white border border-[#C5A880]/20 p-6 rounded-xl hover:border-[#B89047] hover:shadow-lg transition-all duration-300 flex flex-col justify-between"
+              className="bg-[#111625]/90 border border-[#F3C06B]/15 p-6 rounded-xl hover:border-[#F3C06B]/80 hover:bg-[#161D2E] hover:shadow-lg hover:shadow-[#F3C06B]/5 transition-all duration-300 flex flex-col justify-between group"
             >
               <div className="space-y-4">
-                <div className="p-2.5 bg-[#FAF8F5] rounded-lg w-fit border border-[#C5A880]/15">
+                <div className="p-2.5 bg-[#07090E] rounded-lg w-fit border border-[#F3C06B]/15 group-hover:scale-105 transition-transform duration-250">
                   {renderIcon(v.icon)}
                 </div>
                 <div className="space-y-2">
-                  <h3 className="text-sm font-bold text-stone-900 uppercase tracking-wider font-mono">
+                  <h3 className="text-sm font-bold text-[#F3C06B] uppercase tracking-wider font-mono">
                     {v.title}
                   </h3>
-                  <p className="text-xs text-stone-600 leading-relaxed font-sans">
+                  <p className="text-xs text-stone-300 leading-relaxed font-sans">
                     {v.description}
                   </p>
                 </div>

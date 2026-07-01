@@ -294,20 +294,20 @@ export default function PortfolioSamples() {
   const currentSample = samples.find((s) => s.id === activeTab) || samples[0];
 
   return (
-    <section id="portfolio" className="py-24 bg-[#FAF8F5] text-stone-800 relative border-b border-[#C5A880]/30">
-      <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-[#C5A880]/5 rounded-full blur-[110px] pointer-events-none -translate-x-1/2 -translate-y-1/2" />
+    <section id="portfolio" className="py-24 bg-[#07090E] text-stone-300 relative border-b border-[#F3C06B]/20">
+      <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-[#F3C06B]/4 rounded-full blur-[110px] pointer-events-none -translate-x-1/2 -translate-y-1/2" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-          <span className="text-xs font-mono uppercase tracking-widest text-[#B89047] font-extrabold">
+          <span className="text-xs font-mono uppercase tracking-widest text-[#F3C06B] font-extrabold">
             Work Samples
           </span>
-          <h2 className="text-3xl sm:text-4xl font-serif font-extrabold tracking-tight text-stone-900">
+          <h2 className="text-3xl sm:text-4xl font-serif font-black tracking-tight text-white">
             Premium Document Portfolio Mockups
           </h2>
-          <p className="text-stone-600 text-sm sm:text-base">
+          <p className="text-stone-300 text-sm sm:text-base font-sans">
             Review live visual previews of real formats engineered for top-tier corporate, technical, and government applications.
           </p>
         </div>
@@ -316,7 +316,7 @@ export default function PortfolioSamples() {
           
           {/* Tab Selector Column */}
           <div className="lg:col-span-4 space-y-2">
-            <span className="text-[10px] font-mono uppercase tracking-wider text-stone-500 font-bold block mb-3">
+            <span className="text-[10px] font-mono uppercase tracking-wider text-stone-400 font-bold block mb-3">
               Select Document Template:
             </span>
             {samples.map((sample) => (
@@ -325,36 +325,36 @@ export default function PortfolioSamples() {
                 whileHover={{ scale: 1.02, x: 4 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => setActiveTab(sample.id)}
-                className={`w-full text-left p-4 rounded-xl border transition-colors flex justify-between items-center cursor-pointer ${
+                className={`w-full text-left p-4 rounded-xl border transition-all duration-300 flex justify-between items-center cursor-pointer ${
                   activeTab === sample.id
-                    ? "bg-[#1A1D24] border-stone-800 text-white shadow-lg"
-                    : "bg-white border-[#C5A880]/20 text-stone-700 hover:border-[#B89047] hover:bg-[#FAF8F5] hover:text-[#B89047]"
+                    ? "bg-[#F3C06B] border-transparent text-[#07090E] shadow-lg shadow-[#F3C06B]/15"
+                    : "bg-[#111625]/90 border-[#F3C06B]/15 text-stone-300 hover:border-[#F3C06B] hover:bg-[#161D2E] hover:text-[#F3C06B]"
                 }`}
               >
                 <div className="space-y-1">
-                  <div className={`text-xs font-mono uppercase tracking-wider font-extrabold ${activeTab === sample.id ? 'text-[#C5A880]' : 'text-[#B89047]'}`}>
+                  <div className={`text-xs font-mono uppercase tracking-wider font-extrabold ${activeTab === sample.id ? 'text-[#07090E]/85' : 'text-[#F3C06B]'}`}>
                     {sample.category}
                   </div>
-                  <div className={`text-sm font-bold tracking-tight font-sans ${activeTab === sample.id ? 'text-white' : 'text-stone-900'}`}>
+                  <div className={`text-sm font-bold tracking-tight font-sans ${activeTab === sample.id ? 'text-[#07090E]' : 'text-white'}`}>
                     {sample.title}
                   </div>
                 </div>
-                <Eye className={`w-4 h-4 shrink-0 ${activeTab === sample.id ? 'text-[#C5A880]' : 'text-stone-400'}`} />
+                <Eye className={`w-4 h-4 shrink-0 ${activeTab === sample.id ? 'text-[#07090E]' : 'text-stone-400'}`} />
               </motion.button>
             ))}
           </div>
 
           {/* Interactive Live Preview Panel */}
-          <div className="lg:col-span-8 bg-white border border-[#C5A880]/20 p-6 sm:p-8 rounded-2xl relative overflow-hidden flex flex-col justify-between shadow-xl">
-            <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-[#B89047]/5 to-transparent rounded-bl-full pointer-events-none" />
+          <div className="lg:col-span-8 bg-[#111625]/95 border border-[#F3C06B]/20 p-6 sm:p-8 rounded-2xl relative overflow-hidden flex flex-col justify-between shadow-2xl">
+            <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-[#F3C06B]/5 to-transparent rounded-bl-full pointer-events-none" />
             
             {/* Preview Panel Top */}
-            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-stone-150 pb-4 mb-6">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-[#F3C06B]/15 pb-4 mb-6">
               <div className="space-y-1">
-                <span className="text-[10px] font-mono uppercase text-[#B89047] tracking-widest font-extrabold block">
+                <span className="text-[10px] font-mono uppercase text-[#F3C06B] tracking-widest font-extrabold block">
                   Interactive Live Viewer
                 </span>
-                <h3 className="text-lg font-serif font-bold text-stone-900 tracking-tight">
+                <h3 className="text-lg font-serif font-black text-white tracking-tight">
                   {currentSample.title} ({currentSample.category})
                 </h3>
               </div>
@@ -363,7 +363,7 @@ export default function PortfolioSamples() {
                 {currentSample.tags.map((tag, idx) => (
                   <span
                     key={idx}
-                    className="px-2.5 py-1 bg-[#FAF8F5] border border-stone-200 text-stone-600 font-mono text-[9px] uppercase tracking-wider rounded font-bold"
+                    className="px-2.5 py-1 bg-[#07090E] border border-[#F3C06B]/20 text-[#F3C06B] font-mono text-[9px] uppercase tracking-wider rounded font-bold"
                   >
                     {tag}
                   </span>
@@ -372,21 +372,21 @@ export default function PortfolioSamples() {
             </div>
 
             {/* Simulated Sheet Frame */}
-            <div className="overflow-x-auto overflow-y-auto max-h-[500px] border border-stone-200 rounded-xl p-1 bg-stone-50/50 mb-6">
+            <div className="overflow-x-auto overflow-y-auto max-h-[500px] border border-[#F3C06B]/15 rounded-xl p-1 bg-[#07090E] mb-6">
               {currentSample.content}
             </div>
 
             {/* Actions Bottom Bar */}
-            <div className="pt-5 border-t border-stone-150 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs font-mono">
-              <div className="flex items-center gap-2 text-stone-500">
-                <Award className="w-4 h-4 text-[#B89047]" />
+            <div className="pt-5 border-t border-[#F3C06B]/15 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs font-mono">
+              <div className="flex items-center gap-2 text-stone-400">
+                <Award className="w-4 h-4 text-[#F3C06B]" />
                 <span>100% compliant with standard Applicant Tracking Systems.</span>
               </div>
               <motion.a
                 whileHover={{ scale: 1.03, translateY: -1 }}
                 whileTap={{ scale: 0.98 }}
                 href="mailto:johnsonomeiza.career.consultant@gmail.com"
-                className="flex items-center gap-2 bg-[#1A1D24] text-white hover:bg-[#2D313A] px-5 py-2.5 rounded font-sans font-bold transition-colors shadow-md shadow-stone-800/10 cursor-pointer"
+                className="flex items-center gap-2 bg-gradient-to-r from-[#B89047] to-[#F3C06B] text-[#07090E] hover:brightness-110 px-5 py-2.5 rounded font-sans font-bold transition-all shadow-md cursor-pointer"
               >
                 Request Custom Format <ExternalLink className="w-3.5 h-3.5" />
               </motion.a>

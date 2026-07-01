@@ -26,37 +26,37 @@ export default function Header({ onNavigate }: HeaderProps) {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-[#FAF8F5]/95 backdrop-blur-md border-b border-[#C5A880]/30 text-stone-800 shadow-sm">
+    <header className="sticky top-0 z-50 bg-[#07090E]/95 backdrop-blur-md border-b border-[#F3C06B]/20 text-stone-100 shadow-xl">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-22">
           
           {/* Logo Brand */}
           <motion.div 
-            whileHover={{ scale: 1.02 }}
+            whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.98 }}
-            className="flex items-center gap-3 cursor-pointer select-none" 
+            className="flex items-center gap-4 cursor-pointer select-none" 
             onClick={() => handleLinkClick("hero")}
           >
             <PersonalLogo size="md" />
             <div>
-              <span className="font-sans font-extrabold text-lg tracking-tight bg-gradient-to-r from-[#1A1D24] to-[#C49B55] bg-clip-text text-transparent block">
+              <span className="font-sans font-black text-xl sm:text-2xl tracking-tight bg-gradient-to-r from-[#FFE5A3] via-[#F3C06B] to-[#B89047] bg-clip-text text-transparent block">
                 JOHNSON OMEIZA
               </span>
-              <span className="text-[10px] uppercase tracking-widest text-[#B89047] font-mono block -mt-1 font-bold">
+              <span className="text-[11px] uppercase tracking-widest text-[#F3C06B] font-mono block -mt-0.5 font-bold">
                 Executive Career Consultant
               </span>
             </div>
           </motion.div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-7">
+          <nav className="hidden lg:flex items-center space-x-8">
             {navItems.map((item) => (
               <motion.button
                 key={item.id}
-                whileHover={{ y: -1, scale: 1.05 }}
+                whileHover={{ y: -2, scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => handleLinkClick(item.id)}
-                className="text-xs uppercase tracking-wider font-mono text-stone-600 hover:text-[#B89047] font-bold transition-colors duration-200 cursor-pointer relative"
+                className="text-xs uppercase tracking-wider font-mono text-stone-300 hover:text-[#F3C06B] font-bold transition-colors duration-200 cursor-pointer relative"
               >
                 {item.label}
               </motion.button>
@@ -66,19 +66,19 @@ export default function Header({ onNavigate }: HeaderProps) {
           {/* Call to Action Desktop */}
           <div className="hidden lg:flex items-center gap-4">
             <motion.a
-              whileHover={{ scale: 1.04, translateY: -1, backgroundColor: "rgba(184, 144, 71, 0.05)" }}
-              whileTap={{ scale: 0.96 }}
+              whileHover={{ scale: 1.05, translateY: -1, backgroundColor: "rgba(243, 192, 107, 0.1)" }}
+              whileTap={{ scale: 0.95 }}
               href="mailto:johnsonomeiza.career.consultant@gmail.com"
-              className="flex items-center gap-2 text-xs font-mono font-bold text-[#B89047] border border-[#B89047]/40 px-4 h-10 rounded hover:border-[#B89047] transition-colors duration-200"
+              className="flex items-center gap-2 text-xs font-mono font-bold text-[#F3C06B] border border-[#F3C06B]/40 px-5 h-11 rounded hover:border-[#F3C06B] transition-colors duration-200"
             >
               <Mail className="w-4 h-4" />
               Direct Email
             </motion.a>
             <motion.button
-              whileHover={{ scale: 1.04, translateY: -1 }}
-              whileTap={{ scale: 0.96 }}
+              whileHover={{ scale: 1.05, translateY: -1, boxShadow: "0 0 15px rgba(243, 192, 107, 0.3)" }}
+              whileTap={{ scale: 0.95 }}
               onClick={() => handleLinkClick("contact")}
-              className="bg-[#1A1D24] hover:bg-[#2D313A] text-white border border-[#C5A880]/40 text-xs font-mono font-bold px-5 h-10 rounded transition-colors duration-200 shadow-sm cursor-pointer"
+              className="bg-gradient-to-r from-[#B89047] to-[#F3C06B] hover:from-[#F3C06B] hover:to-[#B89047] text-[#07090E] font-mono font-extrabold text-xs px-6 h-11 rounded transition-colors duration-200 shadow-md cursor-pointer"
             >
               Book Strategy Session
             </motion.button>
@@ -89,9 +89,9 @@ export default function Header({ onNavigate }: HeaderProps) {
             <motion.button
               whileTap={{ scale: 0.9 }}
               onClick={() => setIsOpen(!isOpen)}
-              className="text-stone-600 hover:text-stone-900 p-2 rounded focus:outline-none cursor-pointer"
+              className="text-stone-300 hover:text-white p-2 rounded focus:outline-none cursor-pointer"
             >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
             </motion.button>
           </div>
         </div>
@@ -104,7 +104,7 @@ export default function Header({ onNavigate }: HeaderProps) {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-[#FAF8F5] border-t border-[#C5A880]/20 py-4 px-6 space-y-3 absolute left-0 right-0 top-20 shadow-xl overflow-hidden"
+            className="lg:hidden bg-[#07090E] border-t border-[#F3C06B]/20 py-6 px-6 space-y-4 absolute left-0 right-0 top-22 shadow-2xl overflow-hidden"
           >
             <nav className="flex flex-col space-y-4">
               {navItems.map((item) => (
@@ -112,17 +112,17 @@ export default function Header({ onNavigate }: HeaderProps) {
                   key={item.id}
                   whileTap={{ scale: 0.97 }}
                   onClick={() => handleLinkClick(item.id)}
-                  className="text-left text-sm font-mono text-stone-600 hover:text-[#B89047] font-bold py-1 w-full cursor-pointer"
+                  className="text-left text-sm font-mono text-stone-300 hover:text-[#F3C06B] font-bold py-1 w-full cursor-pointer"
                 >
                   {item.label}
                 </motion.button>
               ))}
             </nav>
-            <div className="border-t border-[#C5A880]/20 pt-4 mt-2 flex flex-col gap-3">
+            <div className="border-t border-[#F3C06B]/20 pt-6 mt-4 flex flex-col gap-3">
               <motion.a
                 whileTap={{ scale: 0.97 }}
                 href="mailto:johnsonomeiza.career.consultant@gmail.com"
-                className="flex items-center justify-center gap-2 text-xs font-mono font-bold text-[#B89047] border border-[#B89047]/30 py-2.5 rounded hover:bg-[#B89047]/5"
+                className="flex items-center justify-center gap-2 text-xs font-mono font-bold text-[#F3C06B] border border-[#F3C06B]/30 py-3 rounded hover:bg-[#F3C06B]/10"
               >
                 <Mail className="w-4 h-4" />
                 johnsonomeiza.career.consultant@gmail.com
@@ -130,7 +130,7 @@ export default function Header({ onNavigate }: HeaderProps) {
               <motion.button
                 whileTap={{ scale: 0.97 }}
                 onClick={() => handleLinkClick("contact")}
-                className="bg-[#1A1D24] hover:bg-[#2D313A] text-white text-xs font-mono font-bold py-2.5 rounded transition-colors text-center w-full cursor-pointer"
+                className="bg-gradient-to-r from-[#B89047] to-[#F3C06B] text-[#07090E] text-xs font-mono font-extrabold py-3 rounded transition-colors text-center w-full cursor-pointer"
               >
                 Book Strategy Session
               </motion.button>
